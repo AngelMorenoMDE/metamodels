@@ -8,8 +8,13 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RestService">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+<<<<<<< Upstream, based on origin/master
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="version" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+=======
+    <eStructuralFeatures xsi:type="ecore:EReference" name="version" lowerBound="1"
+        eType="#//Version" containment="true"/>
+>>>>>>> 78f5c06 v1.0.2 rest metamodel
     <eStructuralFeatures xsi:type="ecore:EReference" name="restOperations" upperBound="-1"
         eType="#//RestOperation" containment="true"/>
   </eClassifiers>
@@ -30,5 +35,11 @@
     <eLiterals name="POST" value="2"/>
     <eLiterals name="PUT" value="3"/>
     <eLiterals name="DELETE" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Version">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRelease" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="major" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="minor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
   </eClassifiers>
 </ecore:EPackage>
