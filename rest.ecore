@@ -28,18 +28,33 @@
   <eClassifiers xsi:type="ecore:EClass" name="RestOperationParameter">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="DomainClass"/>
-  <eClassifiers xsi:type="ecore:EClass" name="DomainClassProperty"/>
-  <eClassifiers xsi:type="ecore:EEnum" name="HttpMethod">
-    <eLiterals name="GET" value="1"/>
-    <eLiterals name="POST" value="2"/>
-    <eLiterals name="PUT" value="3"/>
-    <eLiterals name="DELETE" value="4"/>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainClass">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isAbstract" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="domainClassProperties"
+        upperBound="-1" eType="#//DomainClassProperty" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="parentDomainClass" eType="#//DomainClass"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="DomainClassProperty">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//PrimitiveTypes"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Version">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isRelease" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="major" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="minor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="path" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="HttpMethod">
+    <eLiterals name="GET" value="1"/>
+    <eLiterals name="POST" value="2"/>
+    <eLiterals name="PUT" value="3"/>
+    <eLiterals name="DELETE" value="4"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="PrimitiveTypes">
+    <eLiterals name="Boolean" value="1"/>
+    <eLiterals name="Integer" value="2"/>
+    <eLiterals name="Decimal" value="3"/>
+    <eLiterals name="String" value="4"/>
   </eClassifiers>
 </ecore:EPackage>
